@@ -1,5 +1,6 @@
-require("impatient")
-require("configuration")
-require("packer_plugins")
-require("plugins.configuration")
-require("keybindings")
+--require("impatient")
+require("configuration") -- basic editor settings
+require("packer_plugins") -- package manager and plugins
+require("plugins.configuration") -- configure each plugin
+require("keybindings") -- set keybinding
+require("colors") -- colors theme

@@ -1,6 +1,4 @@
 -- See (https://github.com/nanotee/nvim-lua-guide) for details
-require('colors') -- load color theme
-
 local options = vim.o
 local indent = 4
 
@@ -25,7 +23,7 @@ options.background = "dark"
 
 -- Workflow and specific vim optionstings
 -- read doc :h `nohlsearch`
-options.syntax = true
+options.syntax = "on"
 options.hlsearch  = false
 options.incsearch = true
 options.autoread = true
@@ -34,7 +32,7 @@ options.errorbells = false
 options.wrap = false
 options.scrolloff = 8
 options.showmode = false
-options.colorcolumn = 80
+options.colorcolumn = "80"
 options.signcolumn = "yes"
 options.showcmd = false
 options.path = options.path .. "**"
