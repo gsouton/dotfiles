@@ -1,0 +1,6 @@
+require("plugins.lsp")
+require("plugins.cmp")
+require("plugins.telescope")
+require("plugins.lsp_status")
+require("plugins.lualine")
+--require("plugins.lspsaga")

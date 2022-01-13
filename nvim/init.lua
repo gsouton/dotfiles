@@ -1,0 +1,5 @@
+require("impatient")
+require("configuration")
+require("packer_plugins")
+require("plugins.configuration")
+require("keybindings")
