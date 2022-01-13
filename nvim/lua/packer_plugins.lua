@@ -56,9 +56,14 @@ return require('packer').startup(function()
 
     -- fuzzy finder (telescope)
     use {
-    'nvim-telescope/telescope.nvim',
-          requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
     }
+    -- More telescope extensions:
+    --use { "nvim-telescope/telescope-fzy-native.nvim" }
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    use { "nvim-telescope/telescope-file-browser.nvim" }
+
     use 'christoomey/vim-tmux-navigator'  -- tmux movements in nvim
     use 'preservim/nerdtree'    -- tree for visualizing files
 
@@ -117,6 +122,14 @@ return require('packer').startup(function()
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
     }
     -- }}
+
+    -- Comment auto
+    use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+    }
 
     -- Benchmark
     use {

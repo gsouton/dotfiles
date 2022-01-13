@@ -2,7 +2,6 @@
 local options = vim.o
 local indent = 4
 
-
 -- map the leader to key to space
 vim.g.mapleader = " "
 
@@ -32,7 +31,7 @@ options.errorbells = false
 options.wrap = false
 options.scrolloff = 8
 options.showmode = false
-options.colorcolumn = "80"
+--options.colorcolumn = "80"
 options.signcolumn = "yes"
 options.showcmd = false
 options.path = options.path .. "**"
@@ -41,7 +40,8 @@ options.swapfile = false
 --options nobackup
 --options undodir=~/.vim/undodir
 options.undofile  = true
-options.filetype = "on" 
+options.filetype = "on"
+options.clipboard = "unnamedplus"
 
 
 -- Having longer updatetime (default is 4000 ms = 4s) leads to to noticeable

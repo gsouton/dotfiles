@@ -104,33 +104,33 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
---local servers = { 'html', 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp' }
---local servers = {  'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp' }
---for _, lsp in ipairs(servers) do
---  nvim_lsp[lsp].setup {
---    on_attach = on_attach,
---    capabilities = capabilities,
---  }
---end
---
----- LSP Servers {{
----- Lua
---nvim_lsp.sumneko_lua.setup {
---    settings = {
---        Lua = {
---            runtime = {
---            version = "LuaJIT",
---            path = vim.split(package.path, ";")
---            },
---            diagnostics = {
---                -- Recognize `vim` global
---                globals = {"vim", "use"}
---            },
---            workspace = {
---            },
---        }
---    }
---}
+local servers = { 'html', 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp' }
+local servers = {  'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp' }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  }
+end
+
+-- LSP Servers {{
+-- Lua
+nvim_lsp.sumneko_lua.setup {
+    settings = {
+        Lua = {
+            runtime = {
+            version = "LuaJIT",
+            path = vim.split(package.path, ";")
+            },
+            diagnostics = {
+                -- Recognize `vim` global
+                globals = {"vim", "use"}
+            },
+            workspace = {
+            },
+        }
+    }
+}
 -- C
 --nvim_lsp.clangd.setup{}
 

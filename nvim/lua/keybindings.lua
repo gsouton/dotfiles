@@ -11,9 +11,11 @@ vim.api.nvim_set_keymap("i", "<Right>", "<Nop>", {})
 
 
 
-
 -- NerdTree
 vim.api.nvim_set_keymap("n", "<Leader>t", ":NERDTreeFocus<CR>", {})
+
+-- Disable colorcolumn
+--vim.api.nvim_set_keymap("n", "<Leader>0", ":set colorcolumn=0<CR>", {})
 
 
 --Rose-pine
