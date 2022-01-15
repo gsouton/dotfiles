@@ -74,7 +74,6 @@ cmp.setup({
         { name = 'buffer', keyword_length = 4}
 	},
 	mapping = {
-		['<C-Space>'] = cmp.mapping.complete(),
 		['<Tab>'] = cmp.mapping.select_next_item(),
 		['<C-j>'] = cmp.mapping.select_next_item(),
 		['<C-k>'] = cmp.mapping.select_prev_item(),

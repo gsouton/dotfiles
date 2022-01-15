@@ -12,7 +12,7 @@ vim.api.nvim_set_keymap("i", "<Right>", "<Nop>", {})
 
 
 -- NerdTree
-vim.api.nvim_set_keymap("n", "<Leader>t", ":NERDTreeFocus<CR>", {})
+--vim.api.nvim_set_keymap("n", "<Leader>t", ":NERDTreeFocus<CR>", {})
 
 -- Disable colorcolumn
 --vim.api.nvim_set_keymap("n", "<Leader>0", ":set colorcolumn=0<CR>", {})
@@ -26,3 +26,7 @@ vim.api.nvim_set_keymap('n', '<c-m>', [[<cmd>lua require('rose-pine').toggle()<c
 --vim.api.nvim_set_keymap('n', '<c-0>', [[<cmd>lua require('rose-pine').set('main')<cr>]], { noremap = true, silent = true })
 --vim.api.nvim_set_keymap('n', '<c-9>', [[<cmd>lua require('rose-pine').set('moon')<cr>]], { noremap = true, silent = true })
 --vim.api.nvim_set_keymap('n', '<c-8>', [[<cmd>lua require('rose-pine').set('dawn')<cr>]], { noremap = true, silent = true })
+
+
+--tmux sessionizer (The Primeagen)
+vim.api.nvim_set_keymap("n", "<silent><C-f>", ":silent !tmux neww tmux-sessionizer<cr>", {})

@@ -5,6 +5,10 @@ local indent = 4
 -- map the leader to key to space
 vim.g.mapleader = " "
 
+
+-- Encoding
+--options.encoding = "utf-8"
+
 -- Tab options
 options.tabstop = indent
 options.softtabstop = indent
@@ -48,3 +52,9 @@ options.clipboard = "unnamedplus"
 -- delays and poor user experience.
 options.updatetime = 100
 
+-- File to ignore
+
+vim.cmd [[augroup highlight_yank]]
+vim.cmd [[autocmd!]]
+vim.cmd [[autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 90})]]
+vim.cmd [[augroup END]]
