@@ -1,14 +1,35 @@
+local map = vim.api.nvim_set_keymap
 -- LOL STILL USING ARROWS?
-vim.api.nvim_set_keymap("n", "<Up>", "<Nop>", {})
-vim.api.nvim_set_keymap("n", "<Down>", "<Nop>", {})
-vim.api.nvim_set_keymap("n", "<Left>", "<Nop>", {})
-vim.api.nvim_set_keymap("n", "<Right>", "<Nop>", {})
+map("n", "<Up>", "<Nop>", {})
+map("n", "<Down>", "<Nop>", {})
+map("n", "<Left>", "<Nop>", {})
+map("n", "<Right>", "<Nop>", {})
 
-vim.api.nvim_set_keymap("i", "<Up>", "<Nop>", {})
-vim.api.nvim_set_keymap("i", "<Down>", "<Nop>", {})
-vim.api.nvim_set_keymap("i", "<Left>", "<Nop>", {})
-vim.api.nvim_set_keymap("i", "<Right>", "<Nop>", {})
+map("i", "<Up>", "<Nop>", {})
+map("i", "<Down>", "<Nop>", {})
+map("i", "<Left>", "<Nop>", {})
+map("i", "<Right>", "<Nop>", {})
 
+-------------------------------------
+---  Must have remap (subjective) ---
+-------------------------------------
+
+-- make `Y` copy the rest of the line like `D` or `C`
+map("n", "Y", "y$", {})
+
+-- Undo break points
+map("i", ",", ",<c-g>u", {})
+map("i", ".", ".<c-g>u", {})
+map("i", "!", "!<c-g>u", {})
+map("i", "?", "?<c-g>u", {})
+
+-- Moving line around
+map("v", "J", ":m '>+1<CR>gv=gv", {})
+map("v", "K", ":m '<-2<CR>gv=gv", {})
+map("i", "<C-j>", "<esc>:m .+1<CR>==", {})
+map("i", "<C-k>", "<esc>:m .-2<CR>==", {})
+map("n", "<leader>j", ":m .+1<CR>==", {})
+map("n", "<leader>k", ":m .-2<CR>==", {})
 
 
 -- NerdTree
@@ -20,7 +41,7 @@ vim.api.nvim_set_keymap("i", "<Right>", "<Nop>", {})
 
 --Rose-pine
 ---- Toggle variants
-vim.api.nvim_set_keymap('n', '<c-m>', [[<cmd>lua require('rose-pine').toggle()<cr>]], { noremap = true, silent = true })
+map('n', '<c-m>', [[<cmd>lua require('rose-pine').toggle()<cr>]], { noremap = true, silent = true })
 
 -- Set variant
 --vim.api.nvim_set_keymap('n', '<c-0>', [[<cmd>lua require('rose-pine').set('main')<cr>]], { noremap = true, silent = true })
@@ -29,4 +50,6 @@ vim.api.nvim_set_keymap('n', '<c-m>', [[<cmd>lua require('rose-pine').toggle()<c
 
 
 --tmux sessionizer (The Primeagen)
-vim.api.nvim_set_keymap("n", "<silent><C-f>", ":silent !tmux neww tmux-sessionizer<cr>", {})
+map("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<cr>", {})
+
+

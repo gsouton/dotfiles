@@ -38,7 +38,7 @@ end
 map("<leader>ft", "git_files")                   -- search trough git files
 map("<leader>fo", "oldfiles")                    -- search through old opened files
 map("<leader>ff", "find_files")                  -- search through file in cwd
-map("<leader>fg", "live_grep")                   -- search for words through file
+map("<leader>fg", "live_grep")                   -- search for words through all files
 map("<leader>fb", "buffers")
 map_extension("<leader>b", "file_browser")
 --map_tele("<space>fg", "multi_rg")

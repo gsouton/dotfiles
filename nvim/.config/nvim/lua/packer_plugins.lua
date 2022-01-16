@@ -73,12 +73,8 @@ return require('packer').startup(function()
     --use "tpope/vim-abolish" -- Cool things with words!
     --use "tpope/vim-characterize"
 
-
     -- }}
 
-    -- Treesitter {{
-    use 'nvim-treesitter/nvim-treesitter'
-    -- }}
 
     -- Git {{
     use 'tpope/vim-fugitive'
@@ -99,10 +95,13 @@ return require('packer').startup(function()
     use 'elzr/vim-json'
     use 'octol/vim-cpp-enhanced-highlight'
 
+    -- Treesitter
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'nvim-treesitter/playground'
+
     -- UI {{
     use 'mhinz/vim-startify'
     use 'kyazdani42/nvim-web-devicons'      -- Dev icon
-    use 'ryanoasis/vim-devicons'            -- dev icons supported in nerde tree
     use 'shaunsingh/nord.nvim'              -- Nord theme
     use 'overcache/NeoSolarized'            -- Solarized theme
     use 'gruvbox-community/gruvbox'         -- Gruvbox theme
@@ -121,6 +120,7 @@ return require('packer').startup(function()
         end,
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
     }
+    use 'sbdchd/neoformat'
     -- }}
 
     -- Comment auto
