@@ -111,16 +111,14 @@ return require('packer').startup(function()
     as = 'rose-pine',
     tag = 'v0.1.0', -- Optional tag release
     })
+    use 'numToStr/Sakura.nvim'
     use 'glepnir/lspsaga.nvim'
-    use {
-        'nvim-lualine/lualine.nvim',
-        config = function()
-            require("lualine").setup({
-                options = { theme = color_theme }
-            })
-        end,
-        requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    }
+    use({
+        {
+            'nvim-lualine/lualine.nvim',
+            requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        },
+    })
     use 'sbdchd/neoformat'
     -- }}
 

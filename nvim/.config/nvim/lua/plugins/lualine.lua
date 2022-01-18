@@ -1,5 +1,9 @@
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
+
 require('lualine').setup {
   options = {
+    --theme = color_theme,
     icons_enabled = true,
     theme = 'auto',
     component_separators = { left = '', right = ''},
@@ -10,8 +14,11 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_c = {
+        {'filename', file_status = true},
+    },
+    -- lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {"lsp_status.register_progress()", 'filetype', 'encoding', 'fileformat'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
@@ -23,6 +30,7 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
-  extensions = {}
+  extensions = {'quickfix', 'nvim-tree'}
 }
+-- local status = require("plugins.status")
+

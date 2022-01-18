@@ -58,3 +58,11 @@ vim.cmd [[augroup highlight_yank]]
 vim.cmd [[autocmd!]]
 vim.cmd [[autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 90})]]
 vim.cmd [[augroup END]]
+
+
+vim.cmd [[augroup filetypedetect]]
+vim.cmd [[au! BufRead, BufNewFile *.alt setfiletype altarica]]
+vim.cmd [[augroup END]]
+
+vim.cmd [[au Syntax altarica so ~/.config/nvim/syntax/altarica.vim]]
+
