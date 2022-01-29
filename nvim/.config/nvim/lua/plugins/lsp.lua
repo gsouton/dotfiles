@@ -106,20 +106,12 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 --local servers = { 'html', 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp' }
 local servers = { 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp' }
 for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {
-        on_attach = on_attach,
-        capabilities = capabilities,
-    }
-end
-
--- LSP Servers {{
--- Lua
-nvim_lsp.sumneko_lua.setup {
-    settings = {
-        Lua = {
+    local settings = {}
+    if lsp == 'sumneko_lua' then
+        settings.Lua ={
             runtime = {
-            version = "LuaJIT",
-            path = vim.split(package.path, ";")
+                version = "LuaJIT",
+                path = vim.split(package.path, ";")
             },
             diagnostics = {
                 -- Recognize `vim` global
@@ -127,9 +119,33 @@ nvim_lsp.sumneko_lua.setup {
             },
             workspace = {
             },
-        }
     }
-}
+    end
+    nvim_lsp[lsp].setup {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = settings
+    }
+end
+
+-- LSP Servers {{
+-- Lua
+--nvim_lsp.sumneko_lua.setup {
+--    settings = {
+--        Lua = {
+--            runtime = {
+--            version = "LuaJIT",
+--            path = vim.split(package.path, ";")
+--            },
+--            diagnostics = {
+--                -- Recognize `vim` global
+--                globals = {"vim", "use"}
+--            },
+--            workspace = {
+--            },
+--        }
+--    }
+--}
 -- C
 --nvim_lsp.clangd.setup{}
 
@@ -160,5 +176,3 @@ lsp_installer.on_server_ready(function(server)
 end)
 
 
---cmd("autocmd BufWritePre *.ml lua vim.lsp.buf.formatting_sync(nil, 1000)")
--- TODO: replace with a function in utils, where you list files.

@@ -1,6 +1,3 @@
-local lsp_status = require('lsp-status')
-lsp_status.register_progress()
-
 require('lualine').setup {
   options = {
     --theme = color_theme,
@@ -18,7 +15,7 @@ require('lualine').setup {
         {'filename', file_status = true},
     },
     -- lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_x = {"lsp_status.register_progress()", 'filetype', 'encoding', 'fileformat'},
+    lualine_x = {'filetype', 'encoding', 'fileformat'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },

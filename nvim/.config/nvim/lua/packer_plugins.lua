@@ -114,10 +114,8 @@ return require('packer').startup(function()
     use 'numToStr/Sakura.nvim'
     use 'glepnir/lspsaga.nvim'
     use({
-        {
             'nvim-lualine/lualine.nvim',
             requires = { "kyazdani42/nvim-web-devicons", opt = true },
-        },
     })
     use 'sbdchd/neoformat'
     -- }}
