@@ -1,15 +1,3 @@
---local fn = vim.fn -- retrieve vim functions
---local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim" -- install path for packer
---
---
----- check if install path is empty
----- if it is install packer
---if fn.empty(fn.glob(install_path)) > 0 then
---	print("Installing packer...")
---	fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
---	print("Installed packer!")
---end
-
 return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
