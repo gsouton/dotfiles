@@ -1,58 +1,65 @@
 -- See (https://github.com/nanotee/nvim-lua-guide) for details
-local options = vim.o
+local opt = vim.o
 local indent = 4
 
 -- map the leader to key to space
-vim.g.mapleader = " "
+vim.g.mapleader = " " -- map globally that's why vim.g
 
 
 -- Encoding
 --options.encoding = "utf-8"
 
 -- Tab options
-options.tabstop = indent
-options.softtabstop = indent
-options.shiftwidth = indent
-options.smarttab = true
-options.expandtab = true
-options.smartindent = true
+opt.tabstop = indent
+opt.softtabstop = indent
+opt.shiftwidth = indent
+opt.smarttab = true
+opt.expandtab = true
+opt.smartindent = true
 
--- .ditor/UI
-options.relativenumber = true
-options.number = true
-options.termguicolors = true
-options.background = "dark"
+-- editor/UI
+opt.relativenumber = true
+opt.number = true
+opt.termguicolors = true
+opt.background = "dark"
 --options.cmdheight = 2 --Give more space for displaying messages
 
 -- Workflow and specific vim optionstings
--- read doc :h `nohlsearch`
-options.syntax = "on"
-options.hlsearch  = false
-options.incsearch = true
-options.autoread = true
-options.hidden   = true
-options.errorbells = false
-options.wrap = false
-options.scrolloff = 8
-options.showmode = false
---options.colorcolumn = "80"
-options.signcolumn = "yes"
-options.showcmd = false
-options.path = options.path .. "**"
-options.cot = "menu,menuone,noselect"
-options.swapfile = false
+-- read doc i.e `:h nohlsearch`
+opt.syntax = "on"
+opt.hlsearch  = false
+opt.incsearch = true
+opt.autoread = true
+opt.hidden   = true
+opt.errorbells = false
+opt.wrap = false
+opt.scrolloff = 8
+opt.showmode = false
+opt.colorcolumn = "90"
+opt.signcolumn = "yes"
+opt.showcmd = false
+opt.path = opt.path .. "**"
+opt.cot = "menu,menuone,noselect"
+opt.swapfile = false
 --options nobackup
 --options undodir=~/.vim/undodir
-options.undofile  = true
-options.filetype = "on"
-options.clipboard = "unnamedplus"
+opt.undofile  = true
+opt.filetype = "on"
+opt.clipboard = "unnamedplus"
 
 
 -- Having longer updatetime (default is 4000 ms = 4s) leads to to noticeable
 -- delays and poor user experience.
-options.updatetime = 100
+opt.updatetime = 50
 
 -- File to ignore
+-- options.wildignore = options.wildignore .. "*.pyc"
+-- options.wildignore = options.wildignore .. "*_build/*"
+-- options.wildignore = options.wildignore .. "**/coverage/*"
+-- options.wildignore = options.wildignore .. "**/node_modules/*"
+-- options.wildignore = options.wildignore .. "**/android/*"
+-- options.wildignore = options.wildignore .. "**/ios/*"
+-- options.wildignore = options.wildignore .. "**/.git/*"
 
 vim.cmd [[augroup highlight_yank]]
 vim.cmd [[autocmd!]]

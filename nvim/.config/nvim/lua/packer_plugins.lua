@@ -10,14 +10,13 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	print("Installed packer!")
 end
 
-local color_theme = vim.g.colorscheme --retrieve current colorscheme
-
 return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
     -- Optimise loading with lua
     use "lewis6991/impatient.nvim"
+
     -- LSP feature and extensions
     use {
         'neovim/nvim-lspconfig',
@@ -90,6 +89,8 @@ return require('packer').startup(function()
       end
     }
     use "rhysd/git-messenger.vim"
+    use "airblade/vim-gitgutter"
+
     -- }}
 
     -- Highlighting
