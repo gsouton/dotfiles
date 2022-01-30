@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+tmux_running=$(pgrep tmux)
+
+# -z string return true if the string is null
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    echo "Create a new tmux session"
+    tmux
+else
+    echo "Trying to attach to an existing tmux session...";
+    tmux a;
+fi
+
+
