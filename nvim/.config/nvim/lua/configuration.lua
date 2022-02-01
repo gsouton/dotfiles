@@ -67,9 +67,4 @@ vim.cmd [[autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({tim
 vim.cmd [[augroup END]]
 
 
--- vim.cmd [[augroup filetypedetect]]
--- vim.cmd [[au! BufRead, BufNewFile *.alt setfiletype altarica]]
--- vim.cmd [[augroup END]]
---
--- vim.cmd [[au Syntax altarica so ~/.config/nvim/syntax/altarica.vim]]
-
+vim.cmd [[au Syntax altarica so ~/.config/nvim/syntax/altarica.vim]]

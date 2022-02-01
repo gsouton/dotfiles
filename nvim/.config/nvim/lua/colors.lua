@@ -40,7 +40,7 @@ vim.g.rose_pine_colors = {
 
 
 
---utils.create_augroup({{'Colorscheme', '*', 'highlight' ,'Normal',  'ctermbg=none', 'guibg=none'}}, 'user_colors')
+utils.create_augroup({{'Colorscheme', '*', 'highlight' ,'Normal',  'ctermbg=none', 'guibg=none'}}, 'user_colors')
 --utils.create_augroup({{'Colorscheme', '*', 'highlight' ,'Normal',  'ctermbg=none'}}, 'user_colors')
 --utils.create_augroup({{'Colorscheme', '*', 'highlight' ,'NonText',  'ctermbg=none', 'guibg=none'}}, 'user_colors')
 

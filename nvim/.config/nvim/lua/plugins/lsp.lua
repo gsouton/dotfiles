@@ -103,8 +103,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
---local servers = { 'html', 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp' }
-local servers = { 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp' }
+local servers = { 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp', 'volar', 'eslint', 'tailwindcss', 'cssls', 'html'}
 for _, lsp in ipairs(servers) do
     local settings = {}
     if lsp == 'sumneko_lua' then

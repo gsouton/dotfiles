@@ -41,6 +41,7 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
 
     -- Worflow and cool tools {{
+    use 'mg979/vim-visual-multi'
 
     -- fuzzy finder (telescope)
     use {
