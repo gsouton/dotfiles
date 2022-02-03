@@ -5,6 +5,10 @@ local theme = "gruvbox"
 --- Gruvbox Settings ---
 vim.g.gruvbox_contrast_dark = "hard"
 vim.g.gruvbox_italic = 1
+vim.g.gruvbox_sign_column = "dark0_hard"
+vim.g.gruvbox_invert_selection = 1
+-- vim.g.gruvbox_hls_cursor = "yellow"
+-- vim.g.gruvbox_invert_indent_guides = 1
 
 -- Rose Pine settings ---
 -- Set theme variant
@@ -38,9 +42,15 @@ vim.g.rose_pine_colors = {
 	},
 }
 
+ -- Example config in Lua
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_functions = true
+vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 
+-- Change the "hint" color to the "orange" color, and make the "error" color bright red
+vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
-utils.create_augroup({{'Colorscheme', '*', 'highlight' ,'Normal',  'ctermbg=none', 'guibg=none'}}, 'user_colors')
+--utils.create_augroup({{'Colorscheme', '*', 'highlight' ,'Normal',  'ctermbg=none', 'guibg=none'}}, 'user_colors')
 --utils.create_augroup({{'Colorscheme', '*', 'highlight' ,'Normal',  'ctermbg=none'}}, 'user_colors')
 --utils.create_augroup({{'Colorscheme', '*', 'highlight' ,'NonText',  'ctermbg=none', 'guibg=none'}}, 'user_colors')
 

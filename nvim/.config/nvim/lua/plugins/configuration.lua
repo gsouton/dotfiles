@@ -1,12 +1,17 @@
-
-require("lspsaga")
+--- Lsp
 require("plugins.lsp")
-require("plugins.cmp")
-require("plugins.telescope")
 require("plugins.lsp_status")
-require("plugins.lualine")
+--- Auto-Completion
+require("plugins.completion")
+--- Fuzzy finder
+require("plugins.telescope")
+--- Workflow and UI
+require("plugins.status_line")
+require("plugins.gutter")
 require("plugins.comments")
 require("plugins.luasnip")
-require("plugins.treesitter")
-require("plugins.gutter")
+require("fidget").setup{}
 require("luasnip.loaders.from_vscode").load()
+--require("plugins.lspsaga")
+---
+require("plugins.treesitter")

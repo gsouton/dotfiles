@@ -92,13 +92,17 @@ return require('packer').startup(function()
     use 'nvim-treesitter/playground'
 
     -- UI {{
-    use 'glepnir/lspsaga.nvim'
-    use "rcarriga/nvim-notify"
+    -- use 'glepnir/lspsaga.nvim'            -- UI for Lsp config
+    use "nvim-lua/popup.nvim"
+    use "rcarriga/nvim-notify"              -- Fancy Notification UI
+    use 'j-hui/fidget.nvim'                 -- UI showing loading of lsp servers
     use 'mhinz/vim-startify'
     use 'kyazdani42/nvim-web-devicons'      -- Dev icon
     use 'shaunsingh/nord.nvim'              -- Nord theme
     use 'overcache/NeoSolarized'            -- Solarized theme
     use 'gruvbox-community/gruvbox'         -- Gruvbox theme
+    --use 'morhetz/gruvbox'
+    use 'folke/tokyonight.nvim'
     use({
     'rose-pine/neovim',
     as = 'rose-pine',

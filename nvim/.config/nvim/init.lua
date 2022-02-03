@@ -4,9 +4,9 @@ if require "first_load"() then
     return
 end
 
-require("configuration") -- basic editor settings
+require("configuration")
 require("plug") -- package manager and plugins
-require("plugins.configuration") -- configure each plugin
+require("plugins.configuration") -- configuration for each plugin
 require("keybindings") -- set keybinding
 require("colors") -- colors theme
 

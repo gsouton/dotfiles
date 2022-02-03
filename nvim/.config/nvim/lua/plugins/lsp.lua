@@ -1,26 +1,12 @@
 -- Aliases
 local nvim_lsp = require('lspconfig')
 
-
--- Diagnostic signs
-local signs = {
-    Error = " ",
-    Warning = " ",
-    Hint = " ",
-    Information = " ",
-}
-for type, icon in pairs(signs) do
-    local hl = "LspDiagnosticsSign" .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
-
 local on_attach = function(client, bufnr)
     -- Aliases
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
     -- Mapping
     local opts = { noremap = true, silent = true }
-
     -- Set keys
     buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -39,24 +25,13 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-    -- use lsp saga for nice UI
-    -- buf_set_keymap("n", "gr", "<cmd>Lspsaga rename<cr>", opts)
-    -- buf_set_keymap("n", "gx", "<cmd>Lspsaga code_action<cr>", opts)
-    -- buf_set_keymap("x", "gx", ":<c-u>Lspsaga range_code_action<cr>", opts)
-    -- buf_set_keymap("n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
-    -- buf_set_keymap("n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
-    -- buf_set_keymap("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
-    -- buf_set_keymap("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
-    -- buf_set_keymap("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>")
-    -- buf_set_keymap("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>")  
-    -- buf_set_keymap('n', '<leader>ca', '<cmd>lua require("lspsaga.codeaction").range_code_action()<CR>', opts)
-
     if client.resolved_capabilities.document_formatting then
         vim.api.nvim_command [[augroup Format]]
         vim.api.nvim_command [[autocmd! * <buffer>]]
         vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
         vim.api.nvim_command [[augroup END]]
     end
+
 
 end
 
@@ -106,6 +81,24 @@ require('lspkind').init({
 })
 
 
+--- UI Customization
+-- Diagnostic signs
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+
+vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=dark0_hard]]
+-- vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=dark0_hard]]
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or "rounded"
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 -- Support autocompletion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
@@ -115,7 +108,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'clangd', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'ocamllsp', 'volar', 'eslint', 'tailwindcss', 'cssls', 'html'}
+local servers = { 'clangd', 'gopls', 'pyright', 'tsserver', 'sumneko_lua', 'volar', 'eslint', 'tailwindcss', 'cssls', 'html'}
 for _, lsp in ipairs(servers) do
     local settings = {}
     if lsp == 'sumneko_lua' then
@@ -135,7 +128,8 @@ for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,
         capabilities = capabilities,
-        settings = settings
+        settings = settings,
+
     }
 end
 

@@ -18,8 +18,8 @@ map("i", "<Right>", "<Nop>", {})
 map("n", "Y", "y$", {})
 
 -- Undo break points
-map("i", ",", ",<c-g>u", {})
 map("i", ".", ".<c-g>u", {})
+map("i", ",", ",<c-g>u", {})
 map("i", "!", "!<c-g>u", {})
 map("i", "?", "?<c-g>u", {})
 
@@ -31,6 +31,24 @@ map("i", "<C-k>", "<esc>:m .-2<CR>==", {})
 map("n", "<leader>j", ":m .+1<CR>==", {})
 map("n", "<leader>k", ":m .-2<CR>==", {})
 
+--Subsitute
+map("n", "<leader>r",":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", {})
+
+--- change Buffer
+map("n", "<leader>bh", ":bprevious<CR>", {})
+map("n", "<leader>bl", ":bnext<CR>", {})
+map("n", "<leader>bq", ":bdelete<CR>", {})
+
+
+--- Tab
+map("n", "<leader>t", ":tabnew<CR>", {})
+map("n", "<leader>tc", ":tabclose<CR>", {})
+map("n", "<leader>tl", ":tabn<CR>", {})
+map("n", "<leader>th", ":tabp<CR>", {})
+
+--- move paragraph Cannot work with tmux movements
+-- map("n", "<C-j>", "}",{})
+-- map("n", "<C-k>", "{",{})
 
 -- NerdTree
 --vim.api.nvim_set_keymap("n", "<Leader>t", ":NERDTreeFocus<CR>", {})
@@ -52,4 +70,6 @@ map("n", "<leader>k", ":m .-2<CR>==", {})
 --tmux sessionizer (The Primeagen)
 map("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<cr>", {})
 
+-- LazyGit
+map("n", "<leader>gl", ":LazyGit<CR>", {})
 

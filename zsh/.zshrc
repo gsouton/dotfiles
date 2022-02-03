@@ -99,6 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cl="clear"
 alias python="python3"
+alias tx="tmux a || tmux-sessionizer"
 
 source $HOME/.zsh_profile
 

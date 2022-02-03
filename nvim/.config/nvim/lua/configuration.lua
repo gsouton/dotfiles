@@ -18,6 +18,8 @@ opt.expandtab = true
 opt.smartindent = true
 
 -- editor/UI
+opt.pumblend = 10
+-- opt.wildmode = "longest:full"
 opt.relativenumber = true
 opt.number = true
 opt.termguicolors = true
@@ -28,6 +30,7 @@ opt.background = "dark"
 -- Workflow and specific vim optionstings
 -- read doc i.e `:h nohlsearch`
 opt.syntax = "on"
+-- opt.mouse = "n"
 opt.hlsearch  = false
 opt.incsearch = true
 opt.autoread = true
@@ -36,7 +39,7 @@ opt.errorbells = false
 opt.wrap = false
 opt.scrolloff = 8
 opt.showmode = false
--- opt.colorcolumn = "90"
+opt.colorcolumn = "90"
 opt.signcolumn = "yes"
 opt.showcmd = false
 opt.path = opt.path .. "**"
@@ -49,8 +52,8 @@ opt.clipboard = "unnamedplus"
 
 
 -- Having longer updatetime (default is 4000 ms = 4s) leads to to noticeable
--- delays and poor user experience.
-opt.updatetime = 50
+-- delays and "poor" user experience.
+opt.updatetime = 100
 
 -- File to ignore
 -- options.wildignore = options.wildignore .. "*.pyc"
