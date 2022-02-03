@@ -22,6 +22,7 @@ opt.relativenumber = true
 opt.number = true
 opt.termguicolors = true
 opt.background = "dark"
+
 --options.cmdheight = 2 --Give more space for displaying messages
 
 -- Workflow and specific vim optionstings
@@ -35,7 +36,7 @@ opt.errorbells = false
 opt.wrap = false
 opt.scrolloff = 8
 opt.showmode = false
-opt.colorcolumn = "90"
+-- opt.colorcolumn = "90"
 opt.signcolumn = "yes"
 opt.showcmd = false
 opt.path = opt.path .. "**"
@@ -44,7 +45,6 @@ opt.swapfile = false
 --options nobackup
 --options undodir=~/.vim/undodir
 opt.undofile  = true
-opt.filetype = "on"
 opt.clipboard = "unnamedplus"
 
 
@@ -67,4 +67,7 @@ vim.cmd [[autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({tim
 vim.cmd [[augroup END]]
 
 
-vim.cmd [[au Syntax altarica so ~/.config/nvim/syntax/altarica.vim]]
+vim.cmd [[augroup altarica]]
+vim.cmd [[au BufRead, BufNewFile *.alt set filetype altarica]]
+vim.cmd [[augroup END]]
+

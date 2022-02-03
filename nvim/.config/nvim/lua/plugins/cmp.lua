@@ -26,8 +26,8 @@ cmp.setup({
              luasnip = "[snip]"
          },
 
-         -- The function below will be called before any actual modifications from lspkind
-         -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+        -- The function below will be called before any actual modifications from lspkind
+        -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
         -- before = function (entry, vim_item)
         --     -- Get the full snippet (and only keep first line)
         --     local word = entry:get_insert_text()
@@ -83,31 +83,3 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' })
 	},
 })
-
---symbol_map = {
---    Text = "",
---    Method = "",
---    Function = "",
---    Constructor = "",
---    Field = "ﰠ",
---    Variable = "",
---    Class = "ﴯ",
---    Interface = "",
---    Module = "",
---    Property = "ﰠ",
---    Unit = "塞",
---    Value = "",
---    Enum = "",
---    Keyword = "",
---    Snippet = "",
---    Color = "",
---    File = "",
---    Reference = "",
---    Folder = "",
---    EnumMember = "",
---    Constant = "",
---    Struct = "פּ",
---    Event = "",
---    Operator = "",
---    TypeParameter = ""
---},

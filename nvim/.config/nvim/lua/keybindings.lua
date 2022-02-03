@@ -11,7 +11,7 @@ map("i", "<Left>", "<Nop>", {})
 map("i", "<Right>", "<Nop>", {})
 
 -------------------------------------
----  Must have remap (subjective) ---
+---  Must have remap ---
 -------------------------------------
 
 -- make `Y` copy the rest of the line like `D` or `C`

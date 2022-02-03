@@ -43,7 +43,7 @@ return require('packer').startup(function()
     -- Worflow and cool tools {{
     use 'mg979/vim-visual-multi'
 
-    -- fuzzy finder (telescope)
+    -- Really cool fuzzy finder (telescope)
     use {
         'nvim-telescope/telescope.nvim',
         requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
@@ -52,6 +52,7 @@ return require('packer').startup(function()
     --use { "nvim-telescope/telescope-fzy-native.nvim" }
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     use { "nvim-telescope/telescope-file-browser.nvim" }
+
 
     use 'christoomey/vim-tmux-navigator'  -- tmux movements in nvim
     use 'preservim/nerdtree'    -- tree for visualizing files
@@ -91,6 +92,8 @@ return require('packer').startup(function()
     use 'nvim-treesitter/playground'
 
     -- UI {{
+    use 'glepnir/lspsaga.nvim'
+    use "rcarriga/nvim-notify"
     use 'mhinz/vim-startify'
     use 'kyazdani42/nvim-web-devicons'      -- Dev icon
     use 'shaunsingh/nord.nvim'              -- Nord theme
@@ -102,7 +105,6 @@ return require('packer').startup(function()
     tag = 'v0.1.0', -- Optional tag release
     })
     use 'numToStr/Sakura.nvim'
-    use 'glepnir/lspsaga.nvim'
     use({
             'nvim-lualine/lualine.nvim',
             requires = { "kyazdani42/nvim-web-devicons", opt = true },

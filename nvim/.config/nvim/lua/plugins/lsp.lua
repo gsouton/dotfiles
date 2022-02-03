@@ -39,6 +39,18 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
+    -- use lsp saga for nice UI
+    -- buf_set_keymap("n", "gr", "<cmd>Lspsaga rename<cr>", opts)
+    -- buf_set_keymap("n", "gx", "<cmd>Lspsaga code_action<cr>", opts)
+    -- buf_set_keymap("x", "gx", ":<c-u>Lspsaga range_code_action<cr>", opts)
+    -- buf_set_keymap("n", "K",  "<cmd>Lspsaga hover_doc<cr>", {silent = true, noremap = true})
+    -- buf_set_keymap("n", "go", "<cmd>Lspsaga show_line_diagnostics<cr>", {silent = true, noremap = true})
+    -- buf_set_keymap("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", {silent = true, noremap = true})
+    -- buf_set_keymap("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", {silent = true, noremap = true})
+    -- buf_set_keymap("n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>")
+    -- buf_set_keymap("n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>")  
+    -- buf_set_keymap('n', '<leader>ca', '<cmd>lua require("lspsaga.codeaction").range_code_action()<CR>', opts)
+
     if client.resolved_capabilities.document_formatting then
         vim.api.nvim_command [[augroup Format]]
         vim.api.nvim_command [[autocmd! * <buffer>]]

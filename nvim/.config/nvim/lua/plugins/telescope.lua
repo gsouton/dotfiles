@@ -1,7 +1,45 @@
+local fb_actions = require "telescope".extensions.file_browser.actions
+local actions = require "telescope.actions"
+
 require("telescope").setup {
     defaults = {
-        prompt_prefix = "> ",
-        selection_caret = "> ",
+        prompt_prefix = "❯ ",
+        selection_caret = "❯ ",
+        selection_strategy = "reset",
+        sorting_strategy = "descending",
+        scroll_strategy = "cycle",
+        color_devicons = true,
+        mappings = {
+            -- This is nicer when used with smart-history plugin.
+            n = {
+                ["<C-k>"] = actions.move_selection_previous,
+                ["<C-j>"] = actions.move_selection_next,
+            },
+            i = {
+                ["<C-k>"] = actions.move_selection_previous,
+                ["<C-j>"] = actions.move_selection_next,
+            },
+        },
+    },
+    extensions = {
+        file_browser = {
+            mappings = {
+                ["i"] = {
+                -- your custom insert mode mappings
+                    ["<C-e>"] = fb_actions.create,
+                    ["<C-d>"] = fb_actions.remove,
+                    ["<C-r>"] = fb_actions.rename,
+                    -- ["<C-m>"] = fb_actions.move,
+                },
+                ["n"] = {
+                -- your custom normal mode mappings
+                    ["<C-e>"] = fb_actions.create,
+                    ["<C-d>"] = fb_actions.remove,
+                    ["<C-r>"] = fb_actions.rename,
+                    -- ["<C-m>"] = fb_actions.move,
+                },
+            },
+        },
     },
 }
 

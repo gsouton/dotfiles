@@ -1,3 +1,5 @@
+
+require("lspsaga")
 require("plugins.lsp")
 require("plugins.cmp")
 require("plugins.telescope")
