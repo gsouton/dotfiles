@@ -55,14 +55,28 @@ return require('packer').startup(function()
 
 
     use 'christoomey/vim-tmux-navigator'  -- tmux movements in nvim
-    use 'preservim/nerdtree'    -- tree for visualizing files
+    -- use 'preservim/nerdtree'    -- tree for visualizing files
 
     --Text manipulation
     use "godlygeek/tabular" -- Quickly align text by pattern
     --use "tpope/vim-repeat" -- Repeat actions better
     --use "tpope/vim-abolish" -- Cool things with words!
     --use "tpope/vim-characterize"
-
+    --
+    --
+    use {
+      'chipsenkbeil/distant.nvim',
+      config = function()
+        require('distant').setup {
+          -- Applies Chip's personal settings to every machine you connect to
+          --
+          -- 1. Ensures that distant servers terminate with no connections
+          -- 2. Provides navigation bindings for remote directories
+          -- 3. Provides keybinding to jump into a remote file's parent directory
+          ['*'] = require('distant.settings').chip_default()
+        }
+      end
+    }
     -- }}
 
 
@@ -101,6 +115,7 @@ return require('packer').startup(function()
     use 'shaunsingh/nord.nvim'              -- Nord theme
     use 'overcache/NeoSolarized'            -- Solarized theme
     use 'gruvbox-community/gruvbox'         -- Gruvbox theme
+    use 'sainnhe/gruvbox-material'
     --use 'morhetz/gruvbox'
     use 'folke/tokyonight.nvim'
     use({

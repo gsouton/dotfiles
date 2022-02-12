@@ -6,7 +6,7 @@ local theme = "gruvbox"
 vim.g.gruvbox_contrast_dark = "hard"
 vim.g.gruvbox_italic = 1
 vim.g.gruvbox_sign_column = "dark0_hard"
-vim.g.gruvbox_invert_selection = 1
+-- vim.g.gruvbox_invert_selection = 1
 -- vim.g.gruvbox_hls_cursor = "yellow"
 -- vim.g.gruvbox_invert_indent_guides = 1
 
@@ -42,7 +42,7 @@ vim.g.rose_pine_colors = {
 	},
 }
 
- -- Example config in Lua
+ -- tokyonight_style config in Lua
 vim.g.tokyonight_style = "night"
 vim.g.tokyonight_italic_functions = true
 vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
