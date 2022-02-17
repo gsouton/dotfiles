@@ -104,3 +104,6 @@ alias tx="tmux a || tmux-sessionizer"
 source $HOME/.zsh_profile
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+EDITOR=nvim
+

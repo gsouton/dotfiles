@@ -114,8 +114,11 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-web-devicons'      -- Dev icon
     use 'shaunsingh/nord.nvim'              -- Nord theme
     use 'overcache/NeoSolarized'            -- Solarized theme
-    use 'gruvbox-community/gruvbox'         -- Gruvbox theme
+    use 'morhetz/gruvbox'         -- Gruvbox theme
+    use 'jacoborus/tender.vim'
+    use 'EdenEast/nightfox.nvim'
     use 'sainnhe/gruvbox-material'
+    use 'rebelot/kanagawa.nvim'
     --use 'morhetz/gruvbox'
     use 'folke/tokyonight.nvim'
     use({
@@ -144,5 +147,9 @@ return require('packer').startup(function()
       "dstein64/vim-startuptime",
       cmd = "StartupTime",
     }
+
+
+    --Java
+    use 'vim-test/vim-test'
 
 end)

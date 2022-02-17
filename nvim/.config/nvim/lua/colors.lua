@@ -1,17 +1,23 @@
 local utils = require('utils')
-local theme = "gruvbox"
+local theme = "gruvbox-material"
 
+
+
+--- Gruvbox material settings ---
+vim.g.gruvbox_material_background = 'hard'
+vim.g.gruvbox_material_enable_italic = 1
+vim.g.gruvbox_material_disable_italic_comment = 1
+vim.g.gruvbox_material_transparent_background = 1
 
 --- Gruvbox Settings ---
 vim.g.gruvbox_contrast_dark = "hard"
-vim.g.gruvbox_italic = 1
+-- vim.g.gruvbox_italic = 1
 vim.g.gruvbox_sign_column = "dark0_hard"
 -- vim.g.gruvbox_invert_selection = 1
 -- vim.g.gruvbox_hls_cursor = "yellow"
 -- vim.g.gruvbox_invert_indent_guides = 1
 
--- Rose Pine settings ---
--- Set theme variant
+--- Rose Pine settings ---
 -- Matches terminal theme if unset
 -- @usage 'main' | 'moon' | 'dawn'
 vim.g.rose_pine_variant = 'main'
@@ -42,7 +48,7 @@ vim.g.rose_pine_colors = {
 	},
 }
 
- -- tokyonight_style config in Lua
+-- tokyonight_style config in Lua
 vim.g.tokyonight_style = "night"
 vim.g.tokyonight_italic_functions = true
 vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
