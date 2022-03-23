@@ -101,9 +101,15 @@ alias cl="clear"
 alias python="python3"
 alias tx="tmux a || tmux-sessionizer"
 
-source $HOME/.zsh_profile
+#source $HOME/.zsh_profile
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 EDITOR=nvim
 
+export PATH=$HOME/.local/bin:$PATH
+
+# opam configuration
+test -r /home/gilles/.opam/opam-init/init.zsh && . /home/gilles/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+alias luamake=/home/gilles/lsp/lua-language-server/3rd/luamake/luamake

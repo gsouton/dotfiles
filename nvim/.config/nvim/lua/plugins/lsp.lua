@@ -35,50 +35,50 @@ local on_attach = function(client, bufnr)
 
 end
 
-require('lspkind').init({
-    -- enables text annotations
-    --
-    -- default: true
-    with_text = true,
-
-    -- default symbol map
-    -- can be either 'default' (requires nerd-fonts font) or
-    -- 'codicons' for codicon preset (requires vscode-codicons font)
-    --
-    -- default: 'default'
-    preset = 'codicons',
-
-    -- override preset symbols
-    --
-    -- default: {}
-    symbol_map = {
-        Text = "",
-        Method = "",
-        Function = "",
-        Constructor = "",
-        Field = "ﰠ",
-        Variable = "",
-        Class = "ﴯ",
-        Interface = "",
-        Module = "",
-        Property = "ﰠ",
-        Unit = "塞",
-        Value = "",
-        Enum = "",
-        Keyword = "",
-        Snippet = "",
-        Color = "",
-        File = "",
-        Reference = "",
-        Folder = "",
-        EnumMember = "",
-        Constant = "",
-        Struct = "פּ",
-        Event = "",
-        Operator = "",
-        TypeParameter = ""
-    },
-})
+--require('lspkind').init({
+--    -- enables text annotations
+--    --
+--    -- default: true
+--    with_text = true,
+--
+--    -- default symbol map
+--    -- can be either 'default' (requires nerd-fonts font) or
+--    -- 'codicons' for codicon preset (requires vscode-codicons font)
+--    --
+--    -- default: 'default'
+--    preset = 'codicons',
+--
+--    -- override preset symbols
+--    --
+--    -- default: {}
+--    symbol_map = {
+--        Text = "",
+--        Method = "",
+--        Function = "",
+--        Constructor = "",
+--        Field = "ﰠ",
+--        Variable = "",
+--        Class = "ﴯ",
+--        Interface = "",
+--        Module = "",
+--        Property = "ﰠ",
+--        Unit = "塞",
+--        Value = "",
+--        Enum = "",
+--        Keyword = "",
+--        Snippet = "",
+--        Color = "",
+--        File = "",
+--        Reference = "",
+--        Folder = "",
+--        EnumMember = "",
+--        Constant = "",
+--        Struct = "פּ",
+--        Event = "",
+--        Operator = "",
+--        TypeParameter = ""
+--    },
+--})
 
 
 --- UI Customization
@@ -90,7 +90,7 @@ for type, icon in pairs(signs) do
 end
 
 
-vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=dark0_hard]]
+-- vim.cmd [[autocmd! ColorScheme * highlight NormalFloat guibg=dark0_hard]]
 -- vim.cmd [[autocmd! ColorScheme * highlight FloatBorder guifg=white guibg=dark0_hard]]
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)

@@ -1,5 +1,5 @@
 local utils = require('utils')
-local theme = "gruvbox-material"
+local theme = "kanagawa"
 
 
 

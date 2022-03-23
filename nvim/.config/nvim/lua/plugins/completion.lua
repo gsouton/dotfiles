@@ -80,6 +80,6 @@ cmp.setup({
 		['<C-d>'] = cmp.mapping.scroll_docs(-1),
 		['<C-u>'] = cmp.mapping.scroll_docs(1),
 		['<CR>'] = cmp.mapping.confirm({select = true}),
-        ['<C-s>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
 	},
 })
