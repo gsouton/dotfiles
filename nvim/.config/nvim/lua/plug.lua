@@ -55,7 +55,7 @@ return require('packer').startup(function()
 
 
     use 'christoomey/vim-tmux-navigator'  -- tmux movements in nvim
-    -- use 'preservim/nerdtree'    -- tree for visualizing files
+    use 'preservim/nerdtree'    -- tree for visualizing files
 
     --Text manipulation
     use "godlygeek/tabular" -- Quickly align text by pattern

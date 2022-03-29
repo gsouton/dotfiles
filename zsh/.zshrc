@@ -100,10 +100,13 @@ source $ZSH/oh-my-zsh.sh
 alias cl="clear"
 alias python="python3"
 alias tx="tmux a || tmux-sessionizer"
+# alias vi="nvim $(fzf)"
+# alias fcd=". fzf_cd"
 
 #source $HOME/.zsh_profile
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{**/node_modules/*,**/.git/*}"'
 
 EDITOR=nvim
 

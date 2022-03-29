@@ -35,51 +35,6 @@ local on_attach = function(client, bufnr)
 
 end
 
---require('lspkind').init({
---    -- enables text annotations
---    --
---    -- default: true
---    with_text = true,
---
---    -- default symbol map
---    -- can be either 'default' (requires nerd-fonts font) or
---    -- 'codicons' for codicon preset (requires vscode-codicons font)
---    --
---    -- default: 'default'
---    preset = 'codicons',
---
---    -- override preset symbols
---    --
---    -- default: {}
---    symbol_map = {
---        Text = "",
---        Method = "",
---        Function = "",
---        Constructor = "",
---        Field = "ﰠ",
---        Variable = "",
---        Class = "ﴯ",
---        Interface = "",
---        Module = "",
---        Property = "ﰠ",
---        Unit = "塞",
---        Value = "",
---        Enum = "",
---        Keyword = "",
---        Snippet = "",
---        Color = "",
---        File = "",
---        Reference = "",
---        Folder = "",
---        EnumMember = "",
---        Constant = "",
---        Struct = "פּ",
---        Event = "",
---        Operator = "",
---        TypeParameter = ""
---    },
---})
-
 
 --- UI Customization
 -- Diagnostic signs
@@ -95,7 +50,7 @@ end
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
   opts = opts or {}
-  opts.border = opts.border or "rounded"
+  -- opts.border = opts.border or "rounded"
   return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
@@ -108,7 +63,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'clangd', 'gopls', 'pyright', 'tsserver', 'sumneko_lua', 'volar', 'eslint', 'tailwindcss', 'cssls', 'html'}
+local servers = { 'clangd', 'gopls', 'pyright', 'tsserver',
+'sumneko_lua', 'volar', 'eslint', 'tailwindcss', 'cssls', 'html'}
+
 for _, lsp in ipairs(servers) do
     local settings = {}
     if lsp == 'sumneko_lua' then
@@ -133,31 +90,6 @@ for _, lsp in ipairs(servers) do
     }
 end
 
--- LSP Servers {{
--- Lua
---nvim_lsp.sumneko_lua.setup {
---    settings = {
---        Lua = {
---            runtime = {
---            version = "LuaJIT",
---            path = vim.split(package.path, ";")
---            },
---            diagnostics = {
---                -- Recognize `vim` global
---                globals = {"vim", "use"}
---            },
---            workspace = {
---            },
---        }
---    }
---}
--- C
---nvim_lsp.clangd.setup{}
-
--- Go
---nvim_lsp.gopls.setup{}
-
--- }}
 
 -- Server installed and managed by plugin nvim-lsp-installer
 local lsp_installer = require('nvim-lsp-installer')
