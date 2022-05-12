@@ -1,0 +1,11 @@
+#!/bin/bash
+# This is definitely VSCode. Trust me, I am an expert.
+# https://hiphish.github.io/blog/2021/07/11/generating-unity3d-project-files-on-linux/
+
+# This script allows you to launch neovim from unity
+# https://chrislabarge.com/posts/neovim-unity-engine/
+
+# Don't forget to add this line as external script argument
+# --remote-silent +$(Line) $(File)
+
+kitty -- nvr --servername unity $@

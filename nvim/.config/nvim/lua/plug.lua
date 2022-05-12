@@ -34,7 +34,8 @@ return require('packer').startup(function()
         'tjdevries/nlua.nvim',              -- lua dev for nvim
         'junegunn/goyo.vim',                -- (markdown) Distraction free mode
         'iamcco/markdown-preview.nvim',     -- (markdown) Previem mode
-        'Hoffs/omnisharp-extended-lsp.nvim'
+        'Hoffs/omnisharp-extended-lsp.nvim',
+        'brgmnn/vim-opencl'
     }
 
     -- Useful functions
@@ -55,6 +56,7 @@ return require('packer').startup(function()
 
 
     use 'christoomey/vim-tmux-navigator'  -- tmux movements in nvim
+    -- use {'knubie/vim-kitty-navigator', run = "cp ./*.py ~/.config/kitty/" }
     use 'preservim/nerdtree'    -- tree for visualizing files
 
     --Text manipulation

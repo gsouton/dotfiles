@@ -32,7 +32,6 @@ local on_attach = function(client, bufnr)
         vim.api.nvim_command [[augroup END]]
     end
 
-
 end
 
 
@@ -63,8 +62,9 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'clangd', 'gopls', 'pyright', 'tsserver',
+local servers = { 'clangd', 'tsserver',
 'sumneko_lua', 'volar', 'eslint', 'tailwindcss', 'cssls', 'html'}
+
 
 for _, lsp in ipairs(servers) do
     local settings = {}
@@ -89,6 +89,20 @@ for _, lsp in ipairs(servers) do
 
     }
 end
+
+-- Configure omnisharp
+-- https://www.jhonatandasilva.com/published/1623278444
+local pid = vim.fn.getpid()
+-- On linux/darwin if using a release build, otherwise under scripts/OmniSharp(.Core)(.cmd)
+local omnisharp_bin = "/home/gilles/.local/share/lsp/omnisharp-linux-x64/run"
+
+nvim_lsp.omnisharp.setup {
+    cmd = { omnisharp_bin, "--languageserver" , "--hostPID", tostring(pid) };
+    root_dir = nvim_lsp.util.root_pattern("*.csproj","*.sln");
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
 
 
 -- Server installed and managed by plugin nvim-lsp-installer

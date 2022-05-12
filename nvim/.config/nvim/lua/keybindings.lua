@@ -70,6 +70,16 @@ map("n", "<leader>th", ":tabp<CR>", {})
 --tmux sessionizer (The Primeagen)
 map("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<cr>", {})
 
+-- Resize
+-- map("n" ,"<+>",  ":vertical resize +1<CR>", {})
+-- map("n" ,"<->",  ":vertical resize -1<CR>", {})
+--
+-- map("n" ,"<Up>",  ":resize +1<CR>", {})
+-- map("n" ,"<Down>",  ":resize -1<CR>", {})
+
+
+
+
 -- LazyGit
 map("n", "<leader>gl", ":LazyGit<CR>", {})
 

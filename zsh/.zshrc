@@ -65,7 +65,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git 
+    extract
+    colored-man-pages
+    copyfile
+
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,10 +111,11 @@ alias tx="tmux a || tmux-sessionizer"
 
 #source $HOME/.zsh_profile
 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{**/node_modules/*,**/.git/*}"'
 
-EDITOR=nvim
+export EDITOR=nvim
 
 export PATH=$HOME/.local/bin:$PATH
 
@@ -116,3 +123,7 @@ export PATH=$HOME/.local/bin:$PATH
 test -r /home/gilles/.opam/opam-init/init.zsh && . /home/gilles/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 alias luamake=/home/gilles/lsp/lua-language-server/3rd/luamake/luamake
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
