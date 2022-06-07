@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -70,7 +71,7 @@ plugins=(
     extract
     colored-man-pages
     copyfile
-
+    nvm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -124,6 +125,21 @@ test -r /home/gilles/.opam/opam-init/init.zsh && . /home/gilles/.opam/opam-init/
 
 alias luamake=/home/gilles/lsp/lua-language-server/3rd/luamake/luamake
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Added by nvm to get nvm auto completion 
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#
+# but loading this every time slows down starting time so we use lazy laoding instead
+export NVM_LAZY=1
+# we also added nvm as zsh plugins
+#
+
+#Only check .zcompdump every day instead of every time
+#autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
+
+# zprof

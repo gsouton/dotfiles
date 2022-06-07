@@ -21,6 +21,9 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-path'      -- Path source
     use 'hrsh7th/cmp-cmdline'   -- Cmdline source
 
+    --Copilot
+    -- use 'github/copilot.vim'
+
     --Snippet support:
     --LuaSnip
     use 'L3MON4D3/LuaSnip'
@@ -33,7 +36,6 @@ return require('packer').startup(function()
         'mfussenegger/nvim-jdtls',          -- java
         'tjdevries/nlua.nvim',              -- lua dev for nvim
         'junegunn/goyo.vim',                -- (markdown) Distraction free mode
-        'iamcco/markdown-preview.nvim',     -- (markdown) Previem mode
         'Hoffs/omnisharp-extended-lsp.nvim',
         'brgmnn/vim-opencl'
     }
@@ -43,6 +45,11 @@ return require('packer').startup(function()
 
     -- Worflow and cool tools {{
     use 'mg979/vim-visual-multi'
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
 
     -- Really cool fuzzy finder (telescope)
     use {
@@ -57,7 +64,7 @@ return require('packer').startup(function()
 
     use 'christoomey/vim-tmux-navigator'  -- tmux movements in nvim
     -- use {'knubie/vim-kitty-navigator', run = "cp ./*.py ~/.config/kitty/" }
-    use 'preservim/nerdtree'    -- tree for visualizing files
+    -- use 'preservim/nerdtree'    -- tree for visualizing files
 
     --Text manipulation
     use "godlygeek/tabular" -- Quickly align text by pattern

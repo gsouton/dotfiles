@@ -77,9 +77,8 @@ map("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<cr>", {})
 -- map("n" ,"<Up>",  ":resize +1<CR>", {})
 -- map("n" ,"<Down>",  ":resize -1<CR>", {})
 
-
-
-
 -- LazyGit
 map("n", "<leader>gl", ":LazyGit<CR>", {})
 
+
+vim.api.nvim_set_keymap('i', '<C-;>', 'copilot#Accept("<CR>")', {expr=true, silent=true})

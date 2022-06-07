@@ -23,9 +23,9 @@ require("nvim-treesitter.configs").setup {
   --   "java"
   -- },
 
-  ensure_installed = "maintained",
-  highlight = {
-      enable = true,
-      -- disable = { "c", "javascript"}
-  }
+  -- ensure_installed = "maintained",
+  -- highlight = {
+  --     enable = true,
+  --     -- disable = { "c", "javascript"}
+  -- }
 }
