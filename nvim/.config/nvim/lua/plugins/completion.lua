@@ -76,7 +76,9 @@ cmp.setup({
 	mapping = {
 		['<Tab>'] = cmp.mapping.select_next_item(),
 		['<C-j>'] = cmp.mapping.select_next_item(),
+		['<Down>'] = cmp.mapping.select_next_item(),
 		['<C-k>'] = cmp.mapping.select_prev_item(),
+		['<Up>'] = cmp.mapping.select_prev_item(),
 		['<C-d>'] = cmp.mapping.scroll_docs(-1),
 		['<C-u>'] = cmp.mapping.scroll_docs(1),
 		['<CR>'] = cmp.mapping.confirm({select = true}),

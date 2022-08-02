@@ -40,6 +40,7 @@ return require('packer').startup(function()
         'brgmnn/vim-opencl'
     }
 
+
     -- Useful functions
     use 'nvim-lua/plenary.nvim'
 
@@ -128,6 +129,16 @@ return require('packer').startup(function()
     use 'EdenEast/nightfox.nvim'
     use 'sainnhe/gruvbox-material'
     use 'rebelot/kanagawa.nvim'
+    use 'ishan9299/modus-theme-vim'
+    use 'Shatur/neovim-ayu'
+    use ({ 'projekt0n/github-nvim-theme' })
+    use {
+        "mcchrish/zenbones.nvim",
+        -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+        -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+        -- In Vim, compat mode is turned on as Lush only works in Neovim.
+        requires = "rktjmp/lush.nvim"
+    }
     --use 'morhetz/gruvbox'
     use 'folke/tokyonight.nvim'
     use({

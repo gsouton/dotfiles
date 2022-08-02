@@ -1,7 +1,12 @@
 local utils = require('utils')
-local theme = "kanagawa"
+-- local theme = "github_light"
+local theme = "rose-pine"
 
 
+require("github-theme").setup({
+    dark_float = true,
+    transparent = true,
+})
 
 --- Gruvbox material settings ---
 vim.g.gruvbox_material_background = 'hard'
@@ -20,7 +25,7 @@ vim.g.gruvbox_sign_column = "dark0_hard"
 --- Rose Pine settings ---
 -- Matches terminal theme if unset
 -- @usage 'main' | 'moon' | 'dawn'
-vim.g.rose_pine_variant = 'main'
+vim.g.rose_pine_variant = 'dawn'
 
 vim.g.rose_pine_bold_vertical_split_line = false
 vim.g.rose_pine_inactive_background = false

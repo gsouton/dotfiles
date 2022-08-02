@@ -1,0 +1,11 @@
+#! /usr/bin/env python3
+import os
+
+print("Hello World");
+cmd = "xinput list | grep AT"
+
+keyboard = os.popen(cmd).read()
+
+keyboard.
+
+
