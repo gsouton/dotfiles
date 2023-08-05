@@ -8,4 +8,4 @@
 # Don't forget to add this line as external script argument
 # --remote-silent +$(Line) $(File)
 
-kitty -- nvr --servername unity $@
+gnome-terminal -- nvr --servername unity $@

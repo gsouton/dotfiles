@@ -8,10 +8,12 @@ return require('packer').startup(function()
     -- LSP feature and extensions
     use {
         'neovim/nvim-lspconfig',
-        'williamboman/nvim-lsp-installer',
         'onsails/lspkind-nvim',
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
         'nvim-lua/lsp-status.nvim',
-        'tjdevries/lsp_extensions.nvim'
+        'tjdevries/lsp_extensions.nvim',
+        'jose-elias-alvarez/null-ls.nvim'
     }
 
     -- Completion {{
@@ -39,6 +41,7 @@ return require('packer').startup(function()
         'Hoffs/omnisharp-extended-lsp.nvim',
         'brgmnn/vim-opencl'
     }
+    use 'BeneCollyridam/futhark-vim'
 
 
     -- Useful functions
@@ -116,7 +119,7 @@ return require('packer').startup(function()
     use 'nvim-treesitter/playground'
 
     -- UI {{
-    -- use 'glepnir/lspsaga.nvim'            -- UI for Lsp config
+    -- use 'glepnir/lspsaga.nvim'           -- UI for Lsp config
     use "nvim-lua/popup.nvim"
     use "rcarriga/nvim-notify"              -- Fancy Notification UI
     use 'j-hui/fidget.nvim'                 -- UI showing loading of lsp servers
@@ -124,11 +127,12 @@ return require('packer').startup(function()
     use 'kyazdani42/nvim-web-devicons'      -- Dev icon
     use 'shaunsingh/nord.nvim'              -- Nord theme
     use 'overcache/NeoSolarized'            -- Solarized theme
-    use 'morhetz/gruvbox'         -- Gruvbox theme
+    use 'morhetz/gruvbox'                   -- Gruvbox theme
     use 'jacoborus/tender.vim'
-    use 'EdenEast/nightfox.nvim'
+    -- use 'EdenEast/nightfox.nvim'
+    use "rebelot/kanagawa.nvim"
+    use "EdenEast/nightfox.nvim" -- Packer
     use 'sainnhe/gruvbox-material'
-    use 'rebelot/kanagawa.nvim'
     use 'ishan9299/modus-theme-vim'
     use 'Shatur/neovim-ayu'
     use ({ 'projekt0n/github-nvim-theme' })
@@ -142,10 +146,13 @@ return require('packer').startup(function()
     --use 'morhetz/gruvbox'
     use 'folke/tokyonight.nvim'
     use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    tag = 'v0.1.0', -- Optional tag release
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        config = function()
+            vim.cmd('colorscheme rose-pine')
+        end
     })
+
     use 'numToStr/Sakura.nvim'
     use({
             'nvim-lualine/lualine.nvim',

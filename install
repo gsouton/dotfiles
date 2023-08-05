@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STOW_FOLDERS="bin nvim tmux zsh vim kitty"
+STOW_FOLDERS="bin nvim tmux zsh vim kitty i3"
 
 for folder in $(echo $STOW_FOLDERS)
 do

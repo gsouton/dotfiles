@@ -13,6 +13,11 @@ require("plugins.status_line")
 require("plugins.gutter")
 require("plugins.comments")
 require("plugins.luasnip")
-require("fidget").setup{}
+-- require("fidget").setup{}
 require("luasnip.loaders.from_vscode").load()
 require("plugins.treesitter")
+
+
+-- LSP installationg simplifiers
+require("plugins.mason")
+require("plugins.null-ls")

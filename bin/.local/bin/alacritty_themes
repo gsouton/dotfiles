@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+sed -i 's|.*.yml| - '$1'|' ~/.config/alacritty/alacritty.yml
+

@@ -39,8 +39,9 @@ filetype plugin indent on
 "delays and poor user experience.
 set updatetime=100
 
-set clipboard=unamedplus
 
 "Mappings
 
 nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
+
+colorscheme default
