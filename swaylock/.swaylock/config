@@ -1,0 +1,16 @@
+indicator-radius=100
+indicator-thickness=10
+inside-color=070D29
+inside-clear-color=D0D1DE
+inside-ver-color=05659B
+
+key-hl-color=AC19B7
+line-color=3A2D86
+ring-color=118DBC
+ring-clear-color=D0D1DE
+bs-hl-color=D0D1DE
+
+ring-ver-color=013D6C
+
+ring-wrong-color=ffaaaa
+text-wrong-color=D0D1DE

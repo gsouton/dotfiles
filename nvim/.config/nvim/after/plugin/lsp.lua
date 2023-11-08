@@ -78,7 +78,7 @@ lspconfig.glslls.setup {
 
 
 -- Turn on lsp status information
-require('fidget').setup()
+-- require('fidget').setup()
 
 -- Setup neovim lua configuration
 require('neodev').setup()

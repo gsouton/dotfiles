@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STOW_FOLDERS="bin nvim tmux zsh vim kitty i3"
+STOW_FOLDERS="bin nvim tmux zsh vim kitty i3 sway swaylock alacritty"
 
 for folder in $(echo $STOW_FOLDERS)
 do

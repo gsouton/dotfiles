@@ -108,6 +108,9 @@ source $HOME/.alias
 # alias vi="nvim $(fzf)"
 # alias fcd=". fzf_cd"
 
+# Ctrl-f
+bindkey -s ^f "tmux-sessionizer\n"
+
 #source $HOME/.zsh_profile
 
 # FZF
@@ -176,3 +179,12 @@ export PATH=$PATH:/usr/local/go/bin
 
 ## Vulkan
 export PATH="$PATH:/home/gilles/.local/share/1.3.243.0/x86_64/bin"
+
+source ~/.path
+
+# bun completions
+[ -s "/home/muff/.bun/_bun" ] && source "/home/muff/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
