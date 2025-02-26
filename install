@@ -5,5 +5,5 @@ STOW_FOLDERS="bin nvim tmux zsh vim kitty i3 sway swaylock alacritty"
 for folder in $(echo $STOW_FOLDERS)
 do
     stow -D $folder
-    stow --verbose $folder
+    stow --verbose -R $folder
 done

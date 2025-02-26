@@ -1,3 +1,4 @@
-require("muff.packer")
 require("muff.set")
-require("muff.remap")
+require("muff.lazy")
+require("muff.keymap")
+require("muff.autocommands")

@@ -146,20 +146,20 @@ compinit -C
 # zprof
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="$HOME/.sdkman"
+#[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
 
 #haskell
-[ -f "/home/gilles/.ghcup/env" ] && source "/home/gilles/.ghcup/env" # ghcup-env
+#[ -f "/home/gilles/.ghcup/env" ] && source "/home/gilles/.ghcup/env" # ghcup-env
 
 #erlang
-export PATH=/home/gilles/.cache/rebar3/bin:$PATH
+#export PATH=/home/gilles/.cache/rebar3/bin:$PATH
 
 # last version of dotnet
-export DOTNET_ROOT=$HOME/dotnet
-export PATH=$HOME/dotnet:$PATH
+# export DOTNET_ROOT=$HOME/dotnet
+# export PATH=$HOME/dotnet:$PATH
 
 
 #julia
@@ -170,15 +170,15 @@ export PATH="$PATH:/home/gilles/.local/share/julia/julia-1.8.4/bin"
 export PATH="$PATH:/home/gilles/.local/share/webdrivers"
 
 ## Deno
-export DENO_INSTALL="/home/gilles/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+#export DENO_INSTALL="/home/gilles/.deno"
+#export PATH="$DENO_INSTALL/bin:$PATH"
 
-export PATH=/home/gilles/.meteor:$PATH
+#export PATH=/home/gilles/.meteor:$PATH
 ## GO
-export PATH=$PATH:/usr/local/go/bin
+#export PATH=$PATH:/usr/local/go/bin
 
 ## Vulkan
-export PATH="$PATH:/home/gilles/.local/share/1.3.243.0/x86_64/bin"
+#export PATH="$PATH:/home/gilles/.local/share/1.3.243.0/x86_64/bin"
 
 source ~/.path
 
@@ -188,3 +188,4 @@ source ~/.path
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+eval "$(~/.local/bin/mise activate zsh)"
