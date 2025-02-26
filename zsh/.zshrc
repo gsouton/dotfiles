@@ -162,12 +162,6 @@ compinit -C
 # export PATH=$HOME/dotnet:$PATH
 
 
-#julia
-export PATH="$PATH:/home/gilles/.local/share/julia/julia-1.8.4/bin"
-
-
-## webdrivers
-export PATH="$PATH:/home/gilles/.local/share/webdrivers"
 
 ## Deno
 #export DENO_INSTALL="/home/gilles/.deno"
@@ -180,12 +174,7 @@ export PATH="$PATH:/home/gilles/.local/share/webdrivers"
 ## Vulkan
 #export PATH="$PATH:/home/gilles/.local/share/1.3.243.0/x86_64/bin"
 
-source ~/.path
+# Created by `pipx` on 2025-02-19 12:55:37
+export PATH="$PATH:/home/gilles/.local/bin"
 
-# bun completions
-[ -s "/home/muff/.bun/_bun" ] && source "/home/muff/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 eval "$(~/.local/bin/mise activate zsh)"
