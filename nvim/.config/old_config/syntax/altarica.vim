@@ -1,1 +1,0 @@
-/home/gilles/altarica-ext/vim/altarica.vim

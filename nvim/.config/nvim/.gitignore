@@ -1,0 +1,9 @@
+# local-only docs (per personal preference — see CHANGELOG.md / README.md locally)
+README.md
+CHANGELOG.md
+
+# nvim runtime artifacts
+spell/
+tags
+
+# NOTE: lazy-lock.json IS committed — pins plugin versions for reproducibility across machines.
