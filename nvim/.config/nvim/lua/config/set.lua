@@ -42,3 +42,21 @@ vim.o.undodir = os.getenv('HOME') .. '/.vim/undodir'
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
+
+-- Over SSH, fall back to OSC 52 escape sequences for clipboard.
+-- The terminal emulator (MobaXterm/iTerm/kitty/wezterm/etc.) intercepts the
+-- sequences and writes to the *local* OS clipboard. No xclip/pbcopy on the
+-- remote needed. Local sessions keep using the native tools detected above.
+if vim.env.SSH_TTY then
+  vim.g.clipboard = {
+    name = 'OSC 52',
+    copy = {
+      ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+    },
+    paste = {
+      ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+      ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+    },
+  }
+end
